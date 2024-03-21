@@ -1,0 +1,42 @@
+{
+  "name": "webflow-codespace",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server ./dist -p 1313",
+    "bundle": "npm run bundle-js && npm run bundle-css",
+    "bundle-js": "parcel build src/js/index.js --out-dir dist",
+    "bundle-css": "parcel build src/css/index.css --out-dir dist",
+    "update-readme": "node update-readme.js",
+    "links": "npm run update-readme",
+    "name": "node name.js",
+    "port": "http-server ./src -p 1313"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Druhin13/webflow-codespace.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Druhin13/webflow-codespace/issues"
+  },
+  "homepage": "https://github.com/Druhin13/webflow-codespace#readme",
+  "devDependencies": {
+    "git-remote-origin-url": "^4.0.0",
+    "http-server": "^14.1.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "parcel-bundler": "^1.12.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run bundle && ./auto-commit.sh && git add README.md",
+      "pre-push-check": "npm run check-repo-name"
+    }
+  }
+}
