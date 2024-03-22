@@ -55,20 +55,25 @@ $(document).ready(function () {
         console.log(footerHeight);
     }
 
-    //get the outer height of body
-    let bodyHeight = $("body").outerHeight();
-    console.log(bodyHeight);
-    let footerHeightNew = $("#footer").outerHeight();
-    console.log(footerHeightNew);
-    let footerAreaNeeded = $("#footer").outerHeight() * 2;
-    console.log(footerAreaNeeded);
+
     //console log the scroll position as the user scrolls
     $(window).scroll(function () {
         footerAreaCalc();
     });
 
     function footerAreaCalc() {
-        console.log($(window).scrollTop());
+
+
+        //get the outer height of body
+        let bodyHeight = $("body").outerHeight();
+        console.log(bodyHeight);
+        let footerHeightNew = $("#footer").outerHeight();
+        console.log(footerHeightNew);
+        let footerAreaNeeded = $("#footer").outerHeight() * 2;
+        console.log("Footer Area Needed = " + footerAreaNeeded);
+
+        console.log("Current Scroll Position = " + $(window).scrollTop());
+        console.log("Needed Scroll Position = " + (bodyHeight - footerAreaNeeded));
 
         if ($("#text-header-top").length) {
             //as soon as the user scrolls past (bodyHeight - footerAreaNeeded), hide #text-header-top, but if the user scrolls back up, show #text-header-top
