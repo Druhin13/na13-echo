@@ -30,6 +30,10 @@
 ```
 
 ```
+<script src="https://na13-echo.vercel.app/src/js/ics-gen.js"></script>
+```
+
+```
 <script src="https://na13-echo.vercel.app/src/js/testimonial-slider.js"></script>
 ```
 
