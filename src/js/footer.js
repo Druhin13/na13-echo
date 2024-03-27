@@ -52,7 +52,7 @@ $(document).ready(function () {
         //get the outer height of #footer, and set the min-height of #footer-height to that value
         let footerHeight = $("#footer").outerHeight();
         $("#footer-height").css("min-height", footerHeight);
-        console.log(footerHeight);
+        // console.log(footerHeight);
     }
 
 
@@ -66,27 +66,27 @@ $(document).ready(function () {
 
         //get the outer height of body
         let bodyHeight = $("body").outerHeight();
-        console.log(bodyHeight);
+        // console.log(bodyHeight);
         let footerHeightNew = $("#footer").outerHeight();
-        console.log(footerHeightNew);
+        // console.log(footerHeightNew);
         let footerAreaNeeded = $("#footer").outerHeight() * 2;
-        console.log("Footer Area Needed = " + footerAreaNeeded);
+        // console.log("Footer Area Needed = " + footerAreaNeeded);
 
-        console.log("Current Scroll Position = " + $(window).scrollTop());
-        console.log("Needed Scroll Position = " + (bodyHeight - footerAreaNeeded));
+        // console.log("Current Scroll Position = " + $(window).scrollTop());
+        // console.log("Needed Scroll Position = " + (bodyHeight - footerAreaNeeded));
 
         if ($("#text-header-top").length) {
             //as soon as the user scrolls past (bodyHeight - footerAreaNeeded), hide #text-header-top, but if the user scrolls back up, show #text-header-top
             if ($(window).scrollTop() > bodyHeight - footerAreaNeeded) {
                 $("#text-header-top").hide();
                 $("#footer").show();
-                console.log("Header hidden");
-                console.log("Footer shown");
+                // console.log("Header hidden");
+                // console.log("Footer shown");
             } else {
                 $("#text-header-top").show();
                 $("#footer").hide();
-                console.log("Header shown");
-                console.log("Footer hidden");
+                // console.log("Header shown");
+                // console.log("Footer hidden");
             }
         }
 
@@ -113,9 +113,9 @@ $(document).ready(function () {
                 "--swatches--footercustom",
                 startBg
             );
-            console.log(startBg);
+            // console.log(startBg);
         } else {
-            console.log("user is not at the top of the page");
+            // console.log("user is not at the top of the page");
             //get the value of attribute data-end-bg of body, and set the bg color of body to that value
             let endBg = $("body").attr("data-end-bg");
             $("body").css("background-color", endBg);
@@ -125,7 +125,7 @@ $(document).ready(function () {
                 "--swatches--footercustom",
                 endBg
             );
-            console.log(endBg);
+            // console.log(endBg);
         }
     }
 
