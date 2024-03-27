@@ -5,5 +5,4 @@ import './custom-quote.js';
 import './date.js';
 import './faq.js';
 import './footer.js';
-import './ics-gen.js';
 import './testimonial-slider.js';
