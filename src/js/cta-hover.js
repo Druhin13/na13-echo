@@ -28,8 +28,9 @@ $(document).ready(function () {
         });
     });
 
-    // Hover functionality for .cta1
-    $(".cta1").hover(
+    // Hover functionality for .cta1 that doesnt have the class no-link
+
+    $(".cta1").not(".no-link").hover(
         function () {
             let index = $(this).index(".cta1");
             let {
@@ -59,7 +60,7 @@ $(document).ready(function () {
     );
 
     // Hover functionality for .cta2
-    $(".cta2").hover(
+    $(".cta2").not(".no-link").hover(
         function () {
             let index = $(this).index(".cta2");
             let {
